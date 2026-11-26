@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #1f2937;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: #1769aa;
+  text-decoration: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 28px auto;
+  flex: 1;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px max(16px, calc((100% - 1100px) / 2));
+  background: #17324d;
+  color: white;
+}
+
+.brand {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.app-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.app-header nav a {
+  color: white;
+}
+
+.app-header nav a.router-link-active {
+  text-decoration: underline;
+}
+
+.app-footer {
+  padding: 18px;
+  text-align: center;
+  background: #e8edf2;
+  color: #4b5563;
+}
+
+.page-heading,
+.request-card__top,
+.pagination,
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.toolbar,
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  margin: 20px 0;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.field span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  font: inherit;
+}
+
+.request-list {
+  display: grid;
+  gap: 14px;
+}
+
+.request-card,
+.details-card,
+.stat-card,
+.request-form,
+.house-list li {
+  padding: 18px;
+  border: 1px solid #e0e6ed;
+  border-radius: 10px;
+  background: white;
+}
+
+.request-card p {
+  margin: 10px 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #e5e7eb;
+  font-size: 13px;
+}
+
+.status-Новая { background: #dbeafe; }
+.status-Назначена { background: #fef3c7; }
+.status-В-работе { background: #ffedd5; }
+.status-Выполнена { background: #dcfce7; }
+.status-Отменена { background: #fee2e2; }
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 6px;
+  background: #1769aa;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-link {
+  margin-top: 10px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stats {
+  margin: 20px 0;
+}
+
+.stat-card {
+  flex: 1;
+  display: grid;
+  gap: 8px;
+}
+
+.stat-card strong {
+  font-size: 26px;
+}
+
+.request-form {
+  display: grid;
+  gap: 16px;
+}
+
+.error-message {
+  margin: 0;
+  color: #b42318;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+}
+
+.house-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.house-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .app-header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .page-heading,
+  .stats,
+  .house-list li {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .toolbar,
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .field {
+    min-width: 0;
+  }
+}
